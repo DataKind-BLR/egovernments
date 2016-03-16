@@ -20,6 +20,9 @@ shinyUI(fluidPage(
     mainPanel(
       fluidRow(
         column(12,
+          tableOutput("outputSummary")
+        ),
+        column(12,
          plotOutput("plotData")
         )
       )
