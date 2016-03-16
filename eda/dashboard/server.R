@@ -43,8 +43,8 @@ shinyServer(function(input, output) {
     series <- getSeries(input)
     byArg <- choicesMapping[[input$timePeriod]]
     left <- zoo(,seq(start(series),end(series),by=byArg))
-    joined = merge(series, left, all=T)
-    numMissing = sum(is.na(joined))
+    joined <- merge(series, left, all=T)
+    numMissing <- sum(is.na(joined))
     print(mean(joined[, 1]))
     dataSummary <- data.frame(
       "Number of datapoints"=c(length(joined)),
