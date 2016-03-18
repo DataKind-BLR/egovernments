@@ -9,3 +9,6 @@ df$NumComplaints <- 1
 choicesForTime <- c("Daily", "Weekly", "Monthly", "Quarterly")
 
 choicesMapping <- hash("Daily"="day", "Weekly"="week", "Monthly"="month", "Quarterly"="quarter")
+
+minDate <- min(df$Complaint.Date)
+maxDate <- max(df$Complaint.Date)

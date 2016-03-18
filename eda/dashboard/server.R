@@ -3,7 +3,10 @@ subsetDf <- function(input) {
   subs <- df
   complaintType <- input$complaintType
   ward <- input$ward
+  startDate <- input$dateRange[1]
+  endDate <- input$dateRange[2]
   
+  subs <- subs[subs$Complaint.Date >= startDate & subs$Complaint.Date <= endDate, ]
   if(complaintType != "All") {
     subs <- subs[subs$Complaint.Type == complaintType,]
   }
@@ -45,12 +48,10 @@ shinyServer(function(input, output) {
     left <- zoo(,seq(start(series),end(series),by=byArg))
     joined <- merge(series, left, all=T)
     numMissing <- sum(is.na(joined))
-    print(mean(joined[, 1]))
     dataSummary <- data.frame(
       "Number of datapoints"=c(length(joined)),
       "Number of 0s in series"=c(numMissing)
     )
-    print(dataSummary)
     rownames(dataSummary) <- c("")
     return(dataSummary)
   })

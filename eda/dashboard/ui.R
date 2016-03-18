@@ -14,6 +14,11 @@ shinyUI(fluidPage(
         selectInput(
           "timePeriod", label = h5("Select Time Period"),
           choices = choicesForTime
+        ),
+        dateRangeInput(
+          "dateRange", label = "Date Range",
+          min=minDate, max=maxDate,
+          start=minDate, end=maxDate
         )
       )
     ),
