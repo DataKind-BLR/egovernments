@@ -1,6 +1,6 @@
 Jinja2==2.8
 MarkupSafe==0.23
-Pygments==2.0.2
+Pygments==2.7.4
 argparse==1.2.1
 backports.ssl-match-hostname==3.4.0.2
 certifi==2015.9.6.2
